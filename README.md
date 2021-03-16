@@ -4,10 +4,6 @@ Quizaldo is ASP.NET Core web application where registered users can paticipate i
 
 Quiz Web Application is a project assigned by Telerik Progress as one of the stages during the hiring process.
 
-Assignment 
-![alt text](https://i.imgur.com/ZcwjPdC.png)
-<img src="https://i.imgur.com/ZcwjPdC.png" width="90%"></img>
-
 **Admin account**: </br>
  *email*: test@abv.bg <br>  *password*: 123456
 ## Getting Started
@@ -45,3 +41,6 @@ update-database
 * Fluent API
 * xUnit
 * Moq
+
+
+![alt text](https://i.imgur.com/ZcwjPdC.png)
