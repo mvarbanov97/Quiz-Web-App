@@ -2,25 +2,23 @@
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
 
-<ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
 {
-    <li class="nav-item">
-        <a  class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage">Hello @User.Identity.Name!</a>
+    <li>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Manage/Index" title="Manage"><i class="icon fas fas fa-user fa-2x" style="color: white"></i></a>
     </li>
-    <li class="nav-item">
-        <form  class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button  type="submit" class="nav-link btn btn-link text-dark">Logout</button>
+    <li>
+        <form id="logoutForm" hidden asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
         </form>
+        <a href="#" onclick="document.getElementById('logoutForm').submit()" title="Logout"><i class="icon fas fa-sign-out-alt fa-2x" style="color: white"></i><span class="nav-label"></span></a>
     </li>
 }
 else
 {
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register">Register</a>
+    <li>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login" title="Login"><i class="icon fas fa-sign-in-alt fa-2x" style="color: white"></i></a>
     </li>
-    <li class="nav-item">
-        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Login">Login</a>
+    <li>
+        <a class="nav-link text-dark" asp-area="Identity" asp-page="/Account/Register" title="Register"><i class="icon fas fa-user-plus fa-2x" style="color: white"></i></a>
     </li>
 }
-</ul>
