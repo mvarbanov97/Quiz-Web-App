@@ -9,7 +9,7 @@
         <div class="row justify-content-sm-center">
             
             <div class="col-sm-4  justify-content-sm-center">
-                <button id="newQuizButton" class="btn btn-success">Start new Quiz</button>
+                <button id="newQuizButton" class="btn btn-primary">Start new Quiz</button>
             </div>
             
         </div>
@@ -24,7 +24,7 @@
             if (i == 0)
             {
                 <div id="questionNumber_@i" class="question ml-sm-5 pl-sm-5 pt-2">
-                    <span id="countdown">45</span>
+                    <span id="countdown" class="countdown">45</span>
                     <p>Category: @currentQuestion.CategoryName</p>
                     <div class="py-2 h5"><b id="qNumber">@(i+1) : @currentQuestion.Content</b></div>
                     <input id="correctAnswer_@i" type="hidden" value="@currentQuestion.CorrectAnswer" />
@@ -42,7 +42,7 @@
             else
             {
                 <div id="questionNumber_@i" style="display:none" class="question ml-sm-5 pl-sm-5 pt-2">
-                    <span id="countdown"></span>
+                    <span id="countdown" class="countdown"></span>
                     <p>Category: @currentQuestion.CategoryName</p>
                     <div class="py-2 h5"><b id="qNumber">@(i+1) : @currentQuestion.Content</b></div>
                     <input id="correctAnswer_@i" type="hidden" value="@currentQuestion.CorrectAnswer" />
@@ -61,8 +61,8 @@
       
             <div class="d-flex align-items-center pt-3">
                 <div class="ml-auto mr-sm-5">
-                    <button id="nextButton" class="btn btn-success">Next</button>
-                    <button id="submitButton" style="display:none" class="btn btn-secondary">Submit</button>
+                    <button id="nextButton" class="btn btn-primary">Next</button>
+                    <button id="submitButton" style="display:none" class="btn btn-success">Submit</button>
                 </div>
             </div>
     </div>

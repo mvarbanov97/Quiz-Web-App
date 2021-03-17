@@ -23,7 +23,7 @@ namespace QuizWebApp.Data.Seeding
 
             dbContext.Users.Add(new User
             {
-                Name = "Test User"
+                Name = "Test User",
                 UserName = "testUsername",
                 NormalizedUserName = "TESTUSERNAME",
                 Email = "test@abv.bg",

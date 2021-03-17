@@ -19,7 +19,7 @@
             data: {
                 labels: ['Wrong Answers', 'Correct Answers',],
                 datasets: [{
-                    label: '# of Wrong Answers',
+                    label: '# of Answered Questions',
                     data: [@wrongAnsweres, @correctAnswers,],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.2)',
@@ -36,14 +36,14 @@
             options: {
                 legend: {
                     labels: {
-                        fontColor: 'white'
+                        fontColor: 'black'
                     }
                 },
                 scales: {
                     yAxes: [{
                         ticks: {
                             beginAtZero: true,
-                            fontColor: 'white'
+                            fontColor: 'black'
                         }
                     }]
                 }
