@@ -4,8 +4,6 @@ let questions = document.querySelectorAll("#questions");
 let count = 1;
 let currentQuestion = document.querySelector('#questionNumber_0');
 let seconds = document.getElementById("countdown").textContent;
-var secondsElement = document.getElementById("countdown").textContent;
-var secondsArray = document.querySelectorAll("#countdown");
 let selectedAnswer;
 let correctIncorrectSpan = document.querySelector(`#checkmark`);
 
@@ -72,9 +70,9 @@ newQuizButton.addEventListener("click", function () {
 // Adding event listener to the next button
 let nextButton = document.getElementById("nextButton");
 nextButton.addEventListener("click", async function () {
-    resetTimer();
     checkCurrentQuestion(currentQuestion);
     await delay(3000);
+    resetTimer();
     toggleQuestion();
 });
 
@@ -95,6 +93,7 @@ function toggleQuestion() {
         nextButton.style.display = "none";
         submitButton.style.display = "block";
     }
+    document.querySelector("#countdown").remove();
     correctIncorrectSpan.textContent = "";
     currentQuestion.style.display = "block";
 }
@@ -136,7 +135,7 @@ function checkAnswer(currentQuestion, correctAnswer) {
         correctAnswerEl.checked = true;
         var span = correctAnswerEl.nextElementSibling;
         console.log(span.style);
-        span.style.background = "#ff0000";
+        span.style.background = "#21bf73";
         score.isTrue.push(false);
         score.categories.push(category);
     }
@@ -152,16 +151,13 @@ var countDown = setInterval(function () {
     seconds--;
     if (seconds == 0) {
         let correctIncorrectSpan = document.querySelector(`#checkmark`);
-        correctIncorrectSpan.textContent = "❌ Marked as incorrect after 45 seconds passed!";
+        correctIncorrectSpan.textContent = "❌";
         score.isTrue.push(false);
         score.categories.push(); // TODO ADD CATEGORY TO ARRAY
         nextButton.click();
+
     }
     document.querySelector("#countdown").textContent = seconds;
-    if (seconds <= 0) {
-        clearInterval(countdown);
-        //Mark the question as wrong
-    }
 }, 1000);
 
 Element.prototype.remove = function () {
