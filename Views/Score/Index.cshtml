@@ -1,0 +1,45 @@
+﻿@model QuizWebApp.ViewModels.CategoryViewModel
+@{
+    ViewData["Title"] = "Score Page";
+    var categories = this.ViewData["categories"] as IEnumerable<SelectListItem>;
+    var selectedCategory = string.Empty;
+}
+
+<div class="row container">
+    <div class="form-group col-md-6">
+        <h3>Check your score by selected Category</h3>
+        <select id="categoryId" asp-items="categories" class="form-control col-md-12">
+        </select>
+        <button onclick="getSearchResult()" type="submit" class="btn btn-success"> Get Results</button>
+    </div>
+    <div class="form-group col-md-6">
+        <h3>Check your all time Score</h3>
+        <form asp-controller="Score" asp-action="AverageScore">
+            <button class="btn btn-success" type="submit">Check All</button>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        // Reloading the whole dom. It can be done better if it send request to action which returns _PartialView
+        // Fix later
+        function getSearchResult() {
+            let categoryId = $("#categoryId").val();
+
+            $.ajax({
+                type: "GET",
+                url: `/Score/ScoreByCategory?categoryId=${categoryId}`,
+                contentType: "text/html; charset=utf-8",
+                data: {
+                },
+                success: function (res) {
+                    document.location.href = this.url;
+                },
+                error: function (res) {
+                    console.log(res);
+                }
+            });
+        }
+    </script>
+} 
