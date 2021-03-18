@@ -4,8 +4,10 @@ Quizaldo is ASP.NET Core web application where registered users can paticipate i
 
 Quiz Web Application is a project assigned by Telerik Progress as one of the stages during the hiring process.
 
+[Used Trivia API](https://opentdb.com/api_config.php) for generating random quizzes.
+
 **Admin account**: </br>
- *email*: test@abv.bg <br>  *password*: 123456
+ *username*: testUsername <br>  *password*: 123456
 ## Getting Started
 
 ###### To run the application you need:
