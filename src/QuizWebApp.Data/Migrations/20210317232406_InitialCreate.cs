@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace QuizWebApp.Migrations
+namespace QuizWebApp.Data.Migrations
 {
     public partial class InitialCreate : Migration
     {

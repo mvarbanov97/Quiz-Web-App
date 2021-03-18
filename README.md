@@ -11,7 +11,7 @@ Quiz Web Application is a project assigned by Telerik Progress as one of the sta
 ###### To run the application you need:
 - .NET Core 3.1 
 
-- If you don't have *Sql server* on your machine you should replace the configuration in *Quizaldo.Web/appsettings.json* with this code:
+- If you don't have *Sql server* on your machine you should replace the configuration in *QuizWebApp.Web/appsettings.json* with this code:
 ```
 {
   "ConnectionStrings": {
