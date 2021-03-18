@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace QuizWebApp.Models.API_Models
+namespace QuizWebApp.Models.APIModels
 {
     public class QuestionResult
     {

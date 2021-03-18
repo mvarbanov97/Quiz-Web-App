@@ -8,5 +8,9 @@ namespace QuizWebApp.Models
 {
     public class Role : IdentityRole<string>
     {
+        public Role()
+        {
+            this.Id = Guid.NewGuid().ToString();
+        }
     }
 }
