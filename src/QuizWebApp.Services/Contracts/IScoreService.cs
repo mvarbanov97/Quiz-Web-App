@@ -1,5 +1,5 @@
 ﻿using QuizWebApp.Models;
-using QuizWebApp.ViewModels;
+using QuizWebApp.Common.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
