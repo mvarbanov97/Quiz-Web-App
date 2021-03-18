@@ -37,5 +37,19 @@ namespace QuizWebApp.Services
 
             return allCategories;
         }
+
+        public async Task<List<int>> GetFiveDifferentCategoryIds()
+        {
+            var rng = new Random();
+            var randomSkip = rng.Next(1, 6);
+            var randomCategoryId = await this.db.Categories
+                .Skip(randomSkip)
+                .Take(5)
+                .Distinct()
+                .Select(x => x.Id)
+                .ToListAsync();
+
+            return randomCategoryId;
+        }
     }
 }

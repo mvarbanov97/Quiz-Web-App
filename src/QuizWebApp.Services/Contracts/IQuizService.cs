@@ -15,7 +15,5 @@ namespace QuizWebApp.Services.Contracts
         void Shuffle<T>(IList<T> list);
 
         Task SubmitQuizToDb(User currentUser, ScoreDto data);
-
-        Task<List<int>> GetFiveDifferenetCategoryIds();
     }
 }

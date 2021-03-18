@@ -9,5 +9,7 @@ namespace QuizWebApp.Services.Contracts
     public interface ICategoryService : IService
     {
         ICollection<Category> GetAllCategoriesFromDb();
+
+        Task<List<int>> GetFiveDifferentCategoryIds();
     }
 }

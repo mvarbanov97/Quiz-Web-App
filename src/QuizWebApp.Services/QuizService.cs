@@ -19,17 +19,19 @@ namespace QuizWebApp.Services
     public class QuizService : IQuizService
     {
         private readonly ApplicationDbContext db;
+        private readonly ICategoryService categoryService;
 
-        public QuizService(ApplicationDbContext db)
+        public QuizService(ApplicationDbContext db, ICategoryService categoryService)
         {
             this.db = db;
+            this.categoryService = categoryService;
         }
 
         public async Task<QuizViewModel> GenerateRandomQuizWithDifferentCategories()
         {
             QuizViewModel quiz = new QuizViewModel();
 
-            var randomCategoryIds = await this.GetFiveDifferenetCategoryIds();
+            var randomCategoryIds = await this.categoryService.GetFiveDifferentCategoryIds();
             var questions = await this.GetQuestionsFromAPIAsync(randomCategoryIds);
 
             foreach (var question in questions.Questions)
@@ -39,20 +41,6 @@ namespace QuizWebApp.Services
             }
 
             return quiz;
-        }
-
-        public async Task<List<int>> GetFiveDifferenetCategoryIds()
-        {
-            var rng = new Random();
-            var randomSkip = rng.Next(1, 6);
-            var randomCategoryId = await this.db.Categories
-                .Skip(randomSkip)
-                .Take(5)
-                .Distinct()
-                .Select(x => x.Id)
-                .ToListAsync();
-
-            return randomCategoryId;
         }
 
         /// <summary>
