@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace QuizWebApp.Dtos
+namespace QuizWebApp.Common.Dtos
 {
     public class ScoreDto
     {

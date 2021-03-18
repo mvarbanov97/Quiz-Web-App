@@ -1,12 +1,12 @@
 ﻿using Newtonsoft.Json;
 using QuizWebApp.Models;
-using QuizWebApp.Models.API_Models;
+using QuizWebApp.Models.APIModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace QuizWebApp.ViewModels
+namespace QuizWebApp.Common.ViewModels
 {
     public class QuizViewModel
     {
